@@ -22,6 +22,11 @@ a{
     text-decoration: none;
 }
 
+input, button,
+textarea, select {
+  font: inherit;
+}
+
 .container{
     margin: 0 auto;
     max-width: 1140px;
@@ -34,6 +39,12 @@ a{
     justify-content: space-between;
     align-items: center; 
     padding: 30px 0;
+    animation-name: Fadein;
+    animation-duration: 1.5s ;
+
+}
+.logo{
+    font-size: 1.5rem;
 }
 .links ul{
     display: flex;
@@ -45,11 +56,15 @@ a{
 
 }
 .links ul li a{
+    font-family: "Inter";
     color: var(--Dark-grayish-blue);
     transition: 0.5s color ease;
+    font-size: 1.1em;
 }
 .links ul li a:hover{
     color: var(--soft-red);
+    
+    
 }
 .hero{
     display: grid;
@@ -69,6 +84,7 @@ a{
     font-family: 'Inter', sans-serif;
     color: hsl(36, 100%, 99%);
     padding: 1rem;
+    animation: SlideFadeIn 1.5s ease-in-out;
 
 }
 .new-articles article a:hover{
@@ -117,10 +133,15 @@ a{
     letter-spacing: 0.25em;
     transition:background-color 0.5s ease;
 
+
   }
+  .button:hover {
+    background-color:  hsl(240, 25%, 98%);
+  }
+
   .articles{
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     margin:  4rem 0;
 
   }
@@ -145,6 +166,36 @@ a{
     color: hsl(233, 8%, 79%);
     font-size: 2rem;
   }
+
+  @keyframes Fadein {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+  
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  
+  }
+  
+  @keyframes SlideFadeIn {
+    0% {
+      transform:translateX(100px) ;
+      opacity: 0;
+    }
+    100% {
+      transform:translateX(0px) ;
+      opacity: 1;
+    }
+  }
+
+  
   @media screen and (max-width:800px){
     .hero{
         grid-template-columns: 1fr;
